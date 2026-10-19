@@ -6,6 +6,6 @@ class PDController:
 
     def __call__(self, reference, observation):
         error = reference - observation
-        action = self.kp * error + self.kd * (error - self.previous_error)
+        action = self.k_p * error + self.k_d * (error - self.previous_error)
         self.previous_error = error
         return action
